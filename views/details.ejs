@@ -1,0 +1,61 @@
+
+<%- include('./partials/header'); %>
+
+<div class= "container" id="services">
+
+    <div class="page-section">
+
+        <h1><%= detailsMovie.title %></h1>
+        <br>
+        <div>
+
+            <img src="<%=  detailsMovie.medium_cover_image %>" >
+        </div>
+        <br>
+
+        <h3>Résumé du film :</h3>
+
+        <p><%=detailsMovie.description_intro %></p>
+    </div>
+
+    <div id="grades">
+        <h5>Note du film :</h5>
+        <%  if (grade == null){   %>
+            <p id="movieGrade">ce film n'a pas encore de note</p>
+        <%  }
+        else {    %>
+
+            <p id="movieGrade"><%= grade.toFixed(2); %></p>
+        <%   }    %>
+    
+        <%  if (hasAlreadyVoted == false && userConnected == true) {    %>
+            <form id="rateMovie">
+
+                <div >
+                    <p class="hidden" id="userID"><%= idUser %></p>
+                    <p class="hidden" id="movieID"><%= detailsMovie.id %></p>
+                    <label for="ratingMovie">Note *</label><br>
+            
+                    <select id="ratingMovie" name="ratingMovie" class="form-control">
+
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+
+                    </select>
+            
+                </div>
+                <div>
+                    <input type="submit" value="Envoyer" id="submit_button" class="btn btn-dark">
+                </div>
+
+            </form>
+        <%   }    %>
+    </div>
+
+    <div>
+        <a href="/" class="h3">Retour vers l'accueil</a>
+    </div>
+</div>

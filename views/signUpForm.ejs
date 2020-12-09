@@ -1,0 +1,42 @@
+<%- include('./partials/header', {title}); %>
+
+<div class="text-center">
+    <h2 class="section-heading text-uppercase">Nouvel utilisateur</h2>
+    <h4 class="section-subheading text-muted">Veuillez remplir le formulaire</h4>
+</div>
+
+<form method="POST" action="/signup" class="text-center">
+
+    <div >
+        <label for="nom">Nom *</label><br>
+        <input type="text" id="nom" name="nom" class="champ_contact_form" required><br>
+    </div>
+
+    <div>
+        <label for="prenom">Prénom *</label><br>
+        <input type="text" id="prenom" name="prenom" required><br>
+    </div>
+
+    <div>
+        <label for="email">Adresse mail *</label><br>
+        <input type="email" id="email" name="email" required><br>
+    </div>
+
+    <div>
+        <label for="password">Mot de passe</label><br>
+        <input id="password" type="password" name="password" autocomplete="off" required><br>
+    </div>
+
+    <div>
+        <label for="confirmPassword">Veuillez à nouveau saisir votre mot de passe</label><br>
+        <input id="confirmPassword" type="password" name="confirmPassword" autocomplete="off" required><br>
+    </div>    
+
+    <div>
+        <input type="submit" value="Envoyer" id="submit_button" class="btn btn-dark">
+    </div>
+
+</form>
+
+
+<%- include('./partials/footer'); %>

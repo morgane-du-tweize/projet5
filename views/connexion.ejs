@@ -1,0 +1,47 @@
+
+<%- include('./partials/header'); %>
+
+    <section class="page-section" id="services">
+        <div class="container">
+
+            <div class="text-center">
+            <h2 class="section-heading text-uppercase jumbotron">Connexion</h2>
+            <h3 class="section-subheading text-muted">Connectez-vous pour accéder à plus d'avantages.</h3>
+            </div>
+
+            <form method="POST" action="/login">
+                <div class="form-group">
+                    <div>
+                        <div>
+                        <label for="email">Adresse mail *</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        </div>
+                </div>
+
+                <div >
+                    <div>
+                    <label for="password">Mot de passe</label><br>
+                    <input id="password" type="password" name="password" autocomplete="off" required><br>
+                    </div>
+                </div>
+       
+                <div>          
+                    <input type="submit" value="Envoyer" id="submit_button" class="btn btn-dark">
+                </div> 
+            </form>
+                
+        </div>
+    </section>
+
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">Utilisateur non enregistré</h2>
+        <h3 class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" ><a href="/signup"> Veuillez vous inscrire</a></h3><br>
+    </div>
+
+    <div>
+        <a href="/">Retour à l'accueil</a>
+    </div>
+
+
+<%- include('./partials/footer'); %>
+

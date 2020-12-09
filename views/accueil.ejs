@@ -1,0 +1,76 @@
+        <%- include('./partials/header'); %>
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome to Movie's Website!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You ! </div>
+        </header>    
+
+        <div class= "container" id="services"> 
+
+            <section class="page-section" >
+    
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Search for any movie</h2>
+
+                    <form id="searchTitle"><input type="text" class="form-control" id="searchText" placeholder="Search any movie">
+                    </form>
+
+                    <div >
+                        <ul id="titleOfTheMovie" class="list-group"></ul>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row text-center">
+                        <div class="col-md-4">
+                            <h4 class="my-3">Search for any genre</h4>
+
+                    <form id="searchGenre" method="POST" action="movies/byGenre">
+                        <label for="movieGenre" >Genre *</label><br>
+                        <select id="movieGenre" name="movieGenre" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">
+                            <%   for (let i = 0 ; i < genres.length ; i++){    %>
+                                <option value="<%=genres[i]%>"><%= genres[i] %></option>
+                            <%   }  %>
+                        </select>
+
+                        <div>
+                            <input type="submit" class="btn btn-dark">
+                        </div>
+                    </form>
+
+                    <div >
+                        <ul id="genreOfTheMovie" class="list-group"></ul>
+                    </div>
+
+                </div>
+
+                <div>
+
+                <h3 class="text-center jumbotron">Featured movies</h3>
+
+                    <table id="listMovies" class="table table-dark table-striped">
+                        <tr>
+                            <th>Titre</th>
+                            <th>Poster</th>
+                            <th>Note</th>
+                            <th>NbPersonnes</th>
+                        </tr>
+                        <%  for (let aMovie of listOf20movies) {  %>
+                            <tr class="20MoviesTitle" id="<%=aMovie.id %>">
+                                <th ><%=aMovie.title %></th>
+                                
+                                <th><a href="/movies/<%=aMovie.id %>"><img src="<%=aMovie.medium_cover_image %>"></a></th>
+                                <th class="hidden hiddenIdMovie"><%=aMovie.id %></th>
+                                <th class="grade">Aucune note</th>
+                                <th class="numberOfVotes">Aucun vote. Soyez le premier à commenter !</th>
+                            </tr>
+                        <%  }  %>
+                    </table>
+
+        </section>
+
+        <%- include('./partials/footer'); %>
+    </div>
+
+</html>
+
