@@ -1,7 +1,3 @@
-/*
-Je mets mes app.use dans app.js
-c'est défini pour genre tout le code les routes les fonctions le boulanger
-*/
 
 const express = require('express');
 const path = require('path');
