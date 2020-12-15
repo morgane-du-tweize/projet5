@@ -26,12 +26,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// module.exports.passwd = "lovebeer" ;
+const {passwd} = require("./data.js") ;
 
 const options = {
     host: 'localhost',
     port: 3306,
     user: 'momo',
-    password: '',
+    password: passwd,
     database: 'proj5',
     multipleStatements: true
 };
